@@ -7,11 +7,14 @@
 ## 安装
 
 1. 关闭游戏。
-2. 将本仓库根目录的 `TV_BiliBili.dll` 与 `manifest.xml` 放入游戏根目录的 `Mods/TV_BiliBili/` 文件夹（没有就新建）。
-3. 启动游戏，在 Mod 列表启用本 Mod。
-4. 首次启用时，在游戏内批准 `network`（联网）能力；不批准则无法取得视频流。
+2. 下载 `v1.0.0` Release 的 `TV_BiliBili_1.0.0.zip` 并解压，得到 `TV_BiliBili` 文件夹。
+3. 将**整个 `TV_BiliBili` 文件夹**放进游戏根目录的 `Mods/`（与 `Probably Stolen.exe` 同级）。
+4. 启动游戏，在 Mod 列表启用本 Mod。
+5. 首次启用时，在游戏内批准 `network`（联网）能力；不批准则无法取得视频流。
 
-发布包只需要以上两个文件，不需要额外复制第三方 DLL。
+也可以直接下载本仓库源码 ZIP：仓库根目录就是 mod 文件夹，把解压后的文件夹复制为 `Mods/TV_BiliBili/` 即可。
+
+mod 文件夹里必需的运行文件只有 `TV_BiliBili.dll` + `manifest.xml`；Release 压缩包另附用户文档，文档不参与加载。不要额外复制第三方 DLL。
 
 ## 文档
 
@@ -22,4 +25,4 @@
 
 ## 发布包
 
-`v1.0.0` Release 提供 `TV_BiliBili_1.0.0.zip`，内含最小发布包 `TV_BiliBili.dll` + `manifest.xml` 及上述四份用户文档。本仓库不包含内部开发证据、测试记录或技术归档。
+`v1.0.0` Release 提供 `TV_BiliBili_1.0.0.zip`：顶层为 `TV_BiliBili/`，内含最小运行包 `TV_BiliBili.dll` + `manifest.xml` 及上述四份用户文档。本仓库不包含内部开发证据、测试记录或技术归档。
