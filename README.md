@@ -1,58 +1,85 @@
-# 店铺小电视：也许是B站？
+# 店铺小电视：也许是B站？（TV_BiliBili）
 
-> 给《深空当铺：可能是偷的》的店铺日历加一个 B 站播放器标签页。  
-> [English](README.en.md) · 《深空当铺：可能是偷的》1.0.0 · 作者 Cicada · MIT
+> 给《深空当铺：可能是偷的》的店铺日历加一个 B 站播放器标签页，把视频画面投到店内显示器上。
+
+[English](README.en.md) · 《深空当铺：可能是偷的》1.0.0 · 需要 `network` 授权 · MIT
 
 ## 这是什么
 
-在店铺日历中新增第 4 个标签页「播放器」。粘贴 B 站视频网页链接或纯 BV 号即可播放，画面同时四角贴合投到店铺日历显示器；点显示器仍打开原版日历。
+原版店铺日历只有三个标签页。本模组在日历里加第 4 个标签页「播放器」：粘贴一个 B 站视频网页链接或纯 BV 号，画面就在标签页里播放，并四角贴合投到店铺日历显示器上。点击显示器仍然打开原版日历，不影响原本玩法。
+
+## 功能
+
+- **视频输入**：支持 B 站网页全链接（可带查询参数）和纯 BV 号；多分 P / 合集固定取第一个分 P。
+- **画面外投**：视频显示在日历标签页内，同时投到店铺日历显示器；不裁片源黑边。
+- **播放控件**：播放 / 暂停、进度拖动跳转、时间显示、音量滑块。
+- **状态提示**：就绪 / 解析中… / 加载中… / 播放中 / 已暂停 / 播放失败 / 无法识别 BV 号 / 请输入 B 站视频网址；失败明细写入日志 `PLAY_FAIL`。
+- **生命周期**：换标签 / 关日历保留续播；睡觉（日结）、离店暂停并返回续播；离开存档回主菜单停止并释放资源。
+- **菜单暂停**：打开 ESC 或选项菜单时暂停，关闭后延时复查再续播，避免同帧切换爆音。
+- **本地行为**：不下载、不缓存视频，不写玩家存档；只在自身 ModData 目录写纯文本运行日志。
+
+## 支持版本与依赖
+
+| 项 | 值 |
+|---|---|
+| 游戏版本 | 《深空当铺：可能是偷的》1.0.0（覆盖该版本全部修订版） |
+| 产品版本 | 1.0.0（首次公开发布） |
+| 运行框架 | Unity 2021.3.45f2 / Mono，目标框架 `netstandard2.1` |
+| 必需条件 | 游戏内批准 `network` 能力；可访问 B 站网页与视频流接口 |
+| 前置模组 | 无 |
+| 随包依赖 | 无。12 个运行时引用由游戏提供，不复制进 mod 文件夹 |
 
 ## 安装
 
+**创意工坊**：当前版本由项目所有者手动发布到 Steam 创意工坊；发布后订阅本模组，在游戏中确认已启用，重启游戏。
+
+**手动安装**：
+
 1. 关闭游戏。
 2. 下载 `v1.0.0` Release 的 `TV_BiliBili_1.0.0.zip` 并解压，得到 `TV_BiliBili` 文件夹。
-3. 将**整个 `TV_BiliBili` 文件夹**放进游戏根目录的 `Mods/`（与 `Probably Stolen.exe` 同级）。
-4. 启动游戏，在 Mod 列表启用本 Mod。
-5. 首次启用时，在游戏内批准 `network`（联网）能力；不批准则无法取得视频流。
+3. 把**整个 `TV_BiliBili` 文件夹**放进游戏根目录的 `Mods\`（与 `Probably Stolen.exe` 同级）。
+4. 启动游戏，在 Mod 列表里启用本模组。
+5. 首次启用时批准 `network`（联网）能力；不批准则无法取得视频流。
 
-也可以直接下载本仓库源码 ZIP：仓库根目录就是 mod 文件夹，把解压后的文件夹复制为 `Mods/TV_BiliBili/` 即可。
+也可以下载本仓库源码 ZIP：仓库根目录就是 mod 文件夹，把解压后的文件夹复制为 `Mods\TV_BiliBili\` 即可。mod 文件夹里必需的运行文件只有 `TV_BiliBili.dll` + `manifest.xml`。
 
-mod 文件夹里必需的运行文件只有 `TV_BiliBili.dll` + `manifest.xml`；Release 压缩包另附用户文档，文档不参与加载。不要额外复制第三方 DLL。
+## 快速上手
 
-## 文档
+1. 在游戏里点店铺日历，切到最右边的第 4 个标签页「播放器」。
+2. 粘贴 B 站视频网页全链接（例如 `https://www.bilibili.com/video/BV1GJ411x7h7`）或纯 BV 号。
+3. 点播放；用进度条跳转，用音量滑块调音量。
+4. 换标签或关日历可以续播；睡觉 / 离店会自动暂停，回来续播。
+5. 想卸载时关闭游戏，删掉 `Mods\TV_BiliBili\` 整个文件夹即可，存档不受影响。
+
+## 截图
+
+暂无随仓库分发的公开截图；请以实机画面为准。Release 页会随版本补充必要说明。
+
+## 已知限制
+
+完整清单见 [已知问题](Docs/KNOWN_ISSUES.md)。三条要点：
+
+- 仅支持 B 站网页全链接和纯 BV 号；av 号、短链、番剧 / 付费 / 充电专属、直播、非 B 站网址不支持。
+- 竖屏黑边是预期行为，模组不裁片源黑边；非基准分辨率未逐一验证。
+- 日结续播回归按项目所有者书面接受的观察项处理；CPU 增量实测 +13.22%，接近 15% 门限但未超限。
+
+## 更多文档
 
 | 想看什么 | 去哪 |
 |---|---|
+| 每项功能的细节与边界 | [功能说明](Docs/FEATURES.md) |
 | 安装、使用、卸载 | [安装与使用](Docs/安装与使用.md) |
-| 兼容游戏版本、依赖、能力声明 | [兼容性与依赖](Docs/兼容性与依赖.md) |
-| 功能说明 | [FEATURES](Docs/FEATURES.md) / [English](Docs/FEATURES.en.md) |
-| 已知问题 | [KNOWN_ISSUES](Docs/KNOWN_ISSUES.md) / [English](Docs/KNOWN_ISSUES.en.md) |
-| 测试结论 | [TESTING](Docs/TESTING.md) / [English](Docs/TESTING.en.md) |
-| 架构说明 | [ARCHITECTURE](Docs/ARCHITECTURE.md) / [English](Docs/ARCHITECTURE.en.md) |
-| 贡献指南 | [CONTRIBUTING](Docs/CONTRIBUTING.md) / [English](Docs/CONTRIBUTING.en.md) |
-| 版本变化 | [更新说明](Docs/更新说明.md) / [CHANGELOG](CHANGELOG.md) / [English](CHANGELOG.en.md) |
-| 自己构建 | [开发说明](DEVELOPMENT.md) / [English](DEVELOPMENT.en.md) |
-| 版本指纹与归档摘要 | [ARCHIVE](ARCHIVE.md) |
+| 兼容版本、依赖与能力声明 | [兼容性与依赖](Docs/兼容性与依赖.md) |
+| 测试结论 | [测试说明](Docs/TESTING.md) |
+| 架构与运行时链路 | [架构说明](Docs/ARCHITECTURE.md) |
+| 已知问题与规避 | [已知问题](Docs/KNOWN_ISSUES.md) / [已知问题与限制](Docs/已知问题与限制.md) |
+| 参与开发、报 Issue | [贡献指南](Docs/CONTRIBUTING.md) |
+| 自己构建 | [开发说明](DEVELOPMENT.md) |
+| 版本变化 | [CHANGELOG](CHANGELOG.md) / [更新说明](Docs/更新说明.md) |
+| 产物校验与复现摘要 | [ARCHIVE](ARCHIVE.md) |
 
-## 仓库结构
+## 许可证与反馈
 
-仓库根目录就是 mod 文件夹；`manifest.xml` 与 `TV_BiliBili.dll` 必须留在根目录，这是游戏加载器的要求。
-
-```text
-TV_BiliBili/
-├── manifest.xml          # mod 身份、版本、能力
-├── TV_BiliBili.dll       # 运行程序集
-├── Docs/                 # 用户文档
-├── Source/               # C# 源码与 csproj
-├── README.md / README.en.md
-├── CHANGELOG.md / CHANGELOG.en.md
-├── DEVELOPMENT.md / DEVELOPMENT.en.md
-├── ARCHIVE.md
-├── LICENSE
-├── .gitignore
-└── .gitattributes
-```
-
-## 发布包
-
-`v1.0.0` Release 提供 `TV_BiliBili_1.0.0.zip`：顶层为 `TV_BiliBili/`，内含最小运行包 `TV_BiliBili.dll` + `manifest.xml` 及 `Docs/` 用户文档。源码与内部资料不从 Release 分发；内部开发证据、测试记录和技术归档不在本仓库。
+- 许可证：[MIT](LICENSE)，版权 `Copyright (c) 2026 Cicada`
+- 源码：<https://github.com/Cicada-Old/TV_BiliBili>
+- 问题反馈：在仓库提 Issue，附游戏版本、模组版本、日志片段与复现步骤；运行日志在 `ModData/TV_BiliBili/`，游戏日志在 `%USERPROFILE%\AppData\LocalLow\Questing Goose Studio\Probably Stolen\Player.log`。请勿附带存档或含个人隐私的信息。
