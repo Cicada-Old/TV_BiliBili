@@ -21,13 +21,18 @@ The mod folder only needs `TV_BiliBili.dll` and `manifest.xml` at runtime. The R
 
 ## Docs
 
-- [Install and use](Docs/安装与使用.md)
-- [Compatibility and dependencies](Docs/兼容性与依赖.md)
-- [Known issues and limits](Docs/已知问题与限制.md)
-- [Release notes](Docs/更新说明.md)
-- [Changelog](CHANGELOG.md)
-- [Development](DEVELOPMENT.md)
-- [Archive summary](ARCHIVE.md)
+| Topic | Link |
+|---|---|
+| Install and use | [安装与使用](Docs/安装与使用.md) |
+| Compatibility and dependencies | [兼容性与依赖](Docs/兼容性与依赖.md) |
+| Features | [FEATURES](Docs/FEATURES.md) / [English](Docs/FEATURES.en.md) |
+| Known issues | [KNOWN_ISSUES](Docs/KNOWN_ISSUES.md) / [English](Docs/KNOWN_ISSUES.en.md) |
+| Testing summary | [TESTING](Docs/TESTING.md) / [English](Docs/TESTING.en.md) |
+| Architecture | [ARCHITECTURE](Docs/ARCHITECTURE.md) / [English](Docs/ARCHITECTURE.en.md) |
+| Contributing | [CONTRIBUTING](Docs/CONTRIBUTING.md) / [English](Docs/CONTRIBUTING.en.md) |
+| Release notes / changelog | [更新说明](Docs/更新说明.md) / [CHANGELOG](CHANGELOG.md) / [English](CHANGELOG.en.md) |
+| Development | [DEVELOPMENT](DEVELOPMENT.md) / [English](DEVELOPMENT.en.md) |
+| Archive summary | [ARCHIVE](ARCHIVE.md) |
 
 ## Repository layout
 
@@ -40,8 +45,10 @@ TV_BiliBili/
 ├── Docs/
 ├── Source/
 ├── README.md / README.en.md
-├── CHANGELOG.md
-├── DEVELOPMENT.md
+├── CHANGELOG.md / CHANGELOG.en.md
+├── DEVELOPMENT.md / DEVELOPMENT.en.md
 ├── ARCHIVE.md
-└── LICENSE
+├── LICENSE
+├── .gitignore
+└── .gitattributes
 ```

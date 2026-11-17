@@ -25,9 +25,13 @@ mod 文件夹里必需的运行文件只有 `TV_BiliBili.dll` + `manifest.xml`�
 |---|---|
 | 安装、使用、卸载 | [安装与使用](Docs/安装与使用.md) |
 | 兼容游戏版本、依赖、能力声明 | [兼容性与依赖](Docs/兼容性与依赖.md) |
-| 功能边界与已知限制 | [已知问题与限制](Docs/已知问题与限制.md) |
-| 版本变化 | [更新说明](Docs/更新说明.md) / [CHANGELOG](CHANGELOG.md) |
-| 自己构建 | [开发说明](DEVELOPMENT.md) |
+| 功能说明 | [FEATURES](Docs/FEATURES.md) / [English](Docs/FEATURES.en.md) |
+| 已知问题 | [KNOWN_ISSUES](Docs/KNOWN_ISSUES.md) / [English](Docs/KNOWN_ISSUES.en.md) |
+| 测试结论 | [TESTING](Docs/TESTING.md) / [English](Docs/TESTING.en.md) |
+| 架构说明 | [ARCHITECTURE](Docs/ARCHITECTURE.md) / [English](Docs/ARCHITECTURE.en.md) |
+| 贡献指南 | [CONTRIBUTING](Docs/CONTRIBUTING.md) / [English](Docs/CONTRIBUTING.en.md) |
+| 版本变化 | [更新说明](Docs/更新说明.md) / [CHANGELOG](CHANGELOG.md) / [English](CHANGELOG.en.md) |
+| 自己构建 | [开发说明](DEVELOPMENT.md) / [English](DEVELOPMENT.en.md) |
 | 版本指纹与归档摘要 | [ARCHIVE](ARCHIVE.md) |
 
 ## 仓库结构
@@ -41,12 +45,14 @@ TV_BiliBili/
 ├── Docs/                 # 用户文档
 ├── Source/               # C# 源码与 csproj
 ├── README.md / README.en.md
-├── CHANGELOG.md
-├── DEVELOPMENT.md
+├── CHANGELOG.md / CHANGELOG.en.md
+├── DEVELOPMENT.md / DEVELOPMENT.en.md
 ├── ARCHIVE.md
-└── LICENSE
+├── LICENSE
+├── .gitignore
+└── .gitattributes
 ```
 
 ## 发布包
 
-`v1.0.0` Release 提供 `TV_BiliBili_1.0.0.zip`：顶层为 `TV_BiliBili/`，内含最小运行包 `TV_BiliBili.dll` + `manifest.xml` 及 `Docs/` 四份用户文档。源码与内部资料不从 Release 分发；内部开发证据、测试记录和技术归档不在本仓库。
+`v1.0.0` Release 提供 `TV_BiliBili_1.0.0.zip`：顶层为 `TV_BiliBili/`，内含最小运行包 `TV_BiliBili.dll` + `manifest.xml` 及 `Docs/` 用户文档。源码与内部资料不从 Release 分发；内部开发证据、测试记录和技术归档不在本仓库。
