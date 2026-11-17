@@ -31,7 +31,7 @@ The vanilla shop calendar has three tabs. This mod adds a fourth tab named **Pla
 
 ## Installation
 
-**Steam Workshop**: this version is published manually by the project owner. After publication, subscribe to the item, confirm it is enabled in-game, and restart the game.
+**Steam Workshop**: The current version has been released to the Steam Workshop; subscribe to this mod, confirm that it is enabled in-game, and restart the game.
 
 **Manual**:
 
