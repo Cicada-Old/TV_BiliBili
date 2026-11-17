@@ -1,0 +1,9 @@
+# 字节敏感的发布文件不做换行转换
+manifest.xml -text
+
+# 二进制资源
+*.dll binary
+*.pdb binary
+*.png binary
+*.jpg binary
+*.zip binary
