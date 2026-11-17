@@ -1,0 +1,19 @@
+# 构建产物与本地环境
+bin/
+obj/
+*.user
+*.log
+
+# IDE / 编辑器
+.vs/
+.idea/
+
+# 游戏存档与本地日志
+*.rws
+*.rws.bak
+ModData/
+
+# 本地工具与临时目录
+libs/
+.workbuddy/
+_tmp/
