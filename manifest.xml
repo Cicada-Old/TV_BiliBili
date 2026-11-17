@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <ID>TV_BiliBili</ID>
+  <Name>店铺小电视：也许是B站？</Name>
+  <Author>Cicada</Author>
+  <ModVersion>1.0.0</ModVersion>
+  <Description>店铺日历新增第 4 个标签页「播放器」：输入 B 站视频网页链接或 BV 号即可播放，画面同时投射到店内日历显示器。</Description>
+  <GameVersions>
+    <Version>1.0.0</Version>
+  </GameVersions>
+  <Prerequisites />
+  <Assemblies>
+    <Assembly>TV_BiliBili.dll</Assembly>
+  </Assemblies>
+  <Capabilities>
+    <Capability>network</Capability>
+  </Capabilities>
+</Manifest>
